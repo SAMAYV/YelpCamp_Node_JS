@@ -1,0 +1,14 @@
+{
+  "name": "databases1",
+  "version": "1.0.0",
+  "description": "data",
+  "main": "cats.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sam",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.9.25"
+  }
+}

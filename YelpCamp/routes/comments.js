@@ -32,6 +32,7 @@ router.post("/campgrounds/:id/comments",middleware.isLoggedIn, function(req,res)
 					comment.save();
 					campground.comments.push(comment);
 					campground.save();
+					req.flash("success","Successfully added comment");
 					res.redirect("/campgrounds/" + campground._id);
 				}
 			});
@@ -70,6 +71,7 @@ router.delete("/campgrounds/:id/comments/:comment_id",middleware.checkCommentOwn
 			res.redirect("back");
 		}
 		else {
+			req.flash("success","Comment deleted");
 			res.redirect("/campgrounds/"+req.params.id);
 		}
 	});

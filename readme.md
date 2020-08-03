@@ -16,6 +16,7 @@ Ensure that you have a Functional Text Editor(Atom,SublimeText,etc.) on your Sys
 	Install express-session
 	Install method-override
 	Install mongoose
+	Install MongoDB
 	Install nodemon
 	Install passport
 	Install passport-local
@@ -25,19 +26,24 @@ Ensure that you have a Functional Text Editor(Atom,SublimeText,etc.) on your Sys
 # For using virtual environment
 
 	To install virtual environment:
-		sudo pip install nodeenv
+		$ sudo pip install nodeenv
 	To create new environment:
-		nodeenv env
+		$ nodeenv env
 	To activate environment:
-		. env/bin/activate 
+		$ . env/bin/activate 
 	To deactivate environment: 
-		deactivate_node
+		$ deactivate_node
 
 # Run Server
 	
-	nodemon app.js 
+	$ nodemon app.js 
 	OR
-	node app.js
+	$ node app.js
+	
+	AND 
+	
+	Run database in parallel by
+	$ mongod
 
 # About
 

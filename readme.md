@@ -33,6 +33,12 @@ Ensure that you have a Functional Text Editor(Atom,SublimeText,etc.) on your Sys
 	To deactivate environment: 
 		deactivate_node
 
+# Run Server
+	
+	nodemon app.js 
+	OR
+	node app.js
+
 # About
 
 	Created an Image Gallery Blog Website (using NodeJS) where people can create their blogs, can

@@ -4,7 +4,7 @@ Welcome to the YelpCamp Webpage
 
 Instructions to run the website on a local machine...
 
-Ensure that you have a Functional Text Editor(Atom,SublimeText,etc.) on your System
+Ensure that you have a Functional Text Editor(Atom,SublimeText,etc.) on your System.
 
 # Install 
 	Install Node

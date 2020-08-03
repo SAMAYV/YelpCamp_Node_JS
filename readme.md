@@ -21,6 +21,18 @@ Ensure that you have a Functional Text Editor(Atom,SublimeText,etc.) on your Sys
 	Install passport-local
 	Install passport-local-mongoose
 
+
+# For using virtual environment
+
+	To install virtual environment:
+		sudo pip install nodeenv
+	To create new environment:
+		nodeenv env
+	To activate environment:
+		. env/bin/activate 
+	To deactivate environment: 
+		deactivate_node
+
 # About
 
 	Created an Image Gallery Blog Website (using NodeJS) where people can create their blogs, can

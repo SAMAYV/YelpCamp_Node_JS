@@ -1,4 +1,21 @@
-# Yelpcamp Webpage Usage Instructions
+# Yelpcamp Usage Instructions
+
+Welcome to the YelpCamp Webpage
+
+Instructions to run the website on a local machine...
+
+Ensure that you have a Functional Text Editor(Atom,SublimeText,etc.) on your System
+
+# For using virtual environment
+
+	To install virtual environment:
+		sudo pip install nodeenv
+	To create new environment:
+		nodeenv env
+	To activate environment:
+		. env/bin/activate 
+	To deactivate environment: 
+		deactivate_node
 
 # About
 

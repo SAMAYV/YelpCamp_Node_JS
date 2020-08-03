@@ -6,16 +6,20 @@ Instructions to run the website on a local machine...
 
 Ensure that you have a Functional Text Editor(Atom,SublimeText,etc.) on your System
 
-# For using virtual environment
-
-	To install virtual environment:
-		sudo pip install nodeenv
-	To create new environment:
-		nodeenv env
-	To activate environment:
-		. env/bin/activate 
-	To deactivate environment: 
-		deactivate_node
+# Install 
+	Install Node
+	Install NPM
+	Install body-parser
+	Install connect-flash
+	Install ejs
+	Install express
+	Install express-session
+	Install method-override
+	Install mongoose
+	Install nodemon
+	Install passport
+	Install passport-local
+	Install passport-local-mongoose
 
 # About
 

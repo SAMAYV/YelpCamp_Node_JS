@@ -31,6 +31,8 @@ mongoose.connect('mongodb://localhost:27017/yelp_camp', {
 .catch(error => console.log(error.message));
 // seedDB();
 
+// Now moment is available for use in all of your view files via the variable named moment
+app.locals.moment = require('moment');
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
 	secret: "vsam09_iitg",

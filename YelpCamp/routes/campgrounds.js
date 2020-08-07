@@ -11,7 +11,7 @@ router.get("/",function(req,res){
 router.get("/campgrounds", function(req, res){
     // Get all campgrounds from DB
     Campground.find({}, function(err, allCampgrounds){
-       if(err){vsam09_iitg
+       if(err){
            console.log(err);
        } else {
           res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds'});

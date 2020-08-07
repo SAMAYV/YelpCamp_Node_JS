@@ -7,16 +7,16 @@ router.get("/",function(req,res){
 	res.render("landing");	
 });
 
-router.get("/campgrounds",function(req,res){	
-	// get all campgrounds from db
-	Campground.find({},function(err,allcampgrounds){
-		if(err){
-			console.log(err);
-		}
-		else {
-			res.render("campgrounds/index",{campgrounds:allcampgrounds,currentUser:req.user});	
-		}
-	});
+//INDEX - show all campgrounds
+router.get("/campgrounds", function(req, res){
+    // Get all campgrounds from DB
+    Campground.find({}, function(err, allCampgrounds){
+       if(err){vsam09_iitg
+           console.log(err);
+       } else {
+          res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds'});
+       }
+    });
 });
 
 router.post("/campgrounds",middleware.isLoggedIn,function(req,res){

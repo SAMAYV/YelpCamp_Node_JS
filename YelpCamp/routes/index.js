@@ -3,16 +3,22 @@ var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
 
-router.get("/register",function(req,res){
-	res.render("register");
+// show register form
+router.get("/register", function(req, res){
+   res.render("register", {page: 'register'}); 
+});
+
+//show login form
+router.get("/login", function(req, res){
+   res.render("login", {page: 'login'}); 
 });
 
 router.post("/register",function(req,res){
 	var newUser = new User({username:req.body.username});
 	User.register(newUser,req.body.password,function(err,user){
 		if(err){
-			req.flash("error",err.message);
-			res.render("register");
+		    console.log(err);
+		    return res.render("register", {error: err.message});
 		}
 		else {
 			// after signing logged in the user
@@ -22,11 +28,6 @@ router.post("/register",function(req,res){
 			});	
 		}
 	});
-});
-
-// LOGIN ROUTES
-router.get("/login",function(req,res){
-	res.render("login",{});
 });
 
 //middleware

@@ -3,6 +3,7 @@ var router = express.Router();
 var Campground = require("../models/campground");
 var middleware = require("../middleware/index");
 var Review = require("../models/review");
+var Comment = require("../models/comment");
 
 router.get("/",function(req,res){
 	res.render("landing");	

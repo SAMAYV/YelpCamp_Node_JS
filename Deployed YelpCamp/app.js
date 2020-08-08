@@ -13,7 +13,8 @@ var express = require("express"),
 
 var CommentRoutes = require("./routes/comments"),
 	CampgroundRoutes = require("./routes/campgrounds"),
-	authRoutes = require("./routes/index");
+	authRoutes = require("./routes/index"),
+	reviewRoutes = require("./routes/reviews");
 
 var app = express();
 app.use(bodyParser.urlencoded({extended:true}));
@@ -55,6 +56,7 @@ app.use(function(req,res,next){
 	next();	
 });
 
+app.use("/campgrounds/:id/reviews", reviewRoutes);
 app.use(authRoutes);
 app.use(CommentRoutes);
 app.use(CampgroundRoutes);

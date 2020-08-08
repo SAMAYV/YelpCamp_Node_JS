@@ -7,6 +7,12 @@ var campgroundSchema = new mongoose.Schema({
    image: String,
    description: String,
    createdAt: {type: Date, default: Date.now },
+   likes: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        }
+   ],
    author: {
 		id: {
 			type: mongoose.Schema.Types.ObjectId,

@@ -10,13 +10,31 @@ router.get("/",function(req,res){
 //INDEX - show all campgrounds
 router.get("/campgrounds", function(req, res){
     // Get all campgrounds from DB
-    Campground.find({}, function(err, allCampgrounds){
-       if(err){
-           console.log(err);
-       } else {
-          res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds'});
-       }
-    });
+    var noMatch = null;
+    if(req.query.search){
+    	const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+    	// filering on basis of title of each campground
+    	Campground.find({name: regex}, function(err, allCampgrounds){
+	        if(err){
+	           console.log(err);
+	        } 
+	        else {
+	       		if(allCampgrounds.length < 1) {
+                	noMatch = "No campgrounds match that query, please try again.";
+              	}
+	          	res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds', noMatch: noMatch});
+	        }
+	    });
+    }
+    else {
+    	Campground.find({}, function(err, allCampgrounds){
+	       if(err){
+	           console.log(err);
+	       } else {
+	          res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds', noMatch: noMatch});
+	       }
+	    });
+    }
 });
 
 router.post("/campgrounds",middleware.isLoggedIn,function(req,res){
@@ -84,5 +102,9 @@ router.delete("/campgrounds/:id",middleware.checkCampgroundOwnership,function(re
 		}
 	});
 });
+
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 module.exports = router;
